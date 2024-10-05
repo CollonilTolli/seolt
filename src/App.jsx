@@ -182,10 +182,6 @@ function App() {
       const objectStore = transaction.objectStore("news");
       const deleteRequest = objectStore.delete(id);
 
-      deleteRequest.onsuccess = () => {
-        console.log(`Новость с id ${id} удалена из базы данных`);
-      };
-
       deleteRequest.onerror = (error) => {
         console.error(`Ошибка при удалении новости с id ${id}:`, error);
       };
